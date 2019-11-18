@@ -1,0 +1,11 @@
+<!-- template/home.html -->
+
+<h1>Showing all quotes</h1>
+
+<ul>
+    {% for quote in all_quotes_list %}
+    <li>"{{quote.text}}" = <a href="{% url 'person' quote.person.pk %}>{{quote.person}}
+        <img src={{quote.person.get_random_image}}" style="max-width: 400;">
+    </li>
+    {% endfor %}
+</ul>
